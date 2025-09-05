@@ -1,26 +1,39 @@
 <?php
 
-echo "Hello World\n";
-echo ('Hello world');
-$name = 'Sofja';
-echo "\nHello $name\n";
+$array = array(1, 2, 3); //old way
+var_dump($array);
 
-$var = 'Hello';
-var_dump($var);
-var_dump(strlen($var));
+$array = [1, 2, 3];
+var_dump($array);
 
-$var = 1;
-var_dump($var);
+$array = [
+    1,
+    'hello',
+    true,
+    [1,2,3],
+    3.4
+];
+var_dump($array);
 
-$var = 1.5;
-var_dump($var);
+$array = [
+    1,
+    true,
+    'name' => 'Sofja',
+    'age' => 17,
+    'isMale' => false,
+    100 => 4,
+    5,
+    6.3,
+    NULL,
+];
+var_dump($array);
 
-var_dump(PHP_INT_MAX);
-var_dump(PHP_FLOAT_MAX);
+var_dump($array[1]);
+var_dump($array['name']);
+$array = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+];
+var_dump($array[2][1]);
 
-$var = true;
-var_dump($var);
-
-$bar = null;
-var_dump($bar)
-?>
