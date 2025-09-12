@@ -1,54 +1,43 @@
 <?php
 
-$i = 5;
-if($i > 10){
-    var_dump('bigger');
-} elseif ($i == 10){
-    var_dump('equals');
-} else {
-    var_dump('smaller');
+for($i=0; $i<10; $i++){
+    var_dump($i);
 }
 
-$day = (int) date ('w', startotime('8.09.2025'));
-
-var_dump($day);
-
-if($day == 1) {
-    var_dump('Esmaspäev');
-} else if($day == 2) {
-    var_dump('Teisipäev');
-}else if($day == 3) {
-    var_dump('Kolmapäev');
-}else if($day == 4) {
-    var_dump('Nejapäev');
-}else if($day == 5) {
-    var_dump('Reede');
-}else if($day == 6) {
-    var_dump('Laupäaev');
-}else if($day == 7) {
-    var_dump('Pühapäev');
+for($i=9; $i>=0; $i--){
+    var_dump($i);
+}
+for($i=1; $i<1_000_000; $i*=2){
+    var_dump($i);
 }
 
-switch($day) {
-    case 1:
-        var_dump('Esmaspäev');
-        break;
-    case 2:
-        var_dump('Teisipäev');
-        break;
-    case 3:
-        var_dump('Kolmapäev');
-        break;
-    case 4:
-        var_dump('Neljapäev');
-        break;
-    case 5:
-    case 6:
-        var_dump('Pidupäev');
-        break;
-    case 7:
-        var_dump('Pühapäev');
-        break;
-    default:
-    var_dump('Imelik päev');
+$start = time();
+$i = 0;
+while(time()<$start+1){
+    $i++;
+}
+var_dump($i);
+$start = time();
+for($i=0; time()<$start+1;$i++){
+
+}
+var_dump($i);
+
+$i = 10;
+while($i<10){
+    var_dump('WHILE');
+}
+
+do{
+    var_dump('DO');
+}while($i<10);
+
+$array = ['Apples', 'Cherries', 'Pears', 'Apricot'];
+
+foreach($array as $fruit){
+    var_dump($fruit);
+}
+
+foreach($array as $key=>$fruit){
+    var_dump("$key=>$fruit");
 }
