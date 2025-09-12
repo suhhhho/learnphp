@@ -1,51 +1,30 @@
 <?php
 
-function hello() {
-    var_dump('hello');
-}
+class Box {
+    public $width;
+    public $height;
+    public $lenght;
 
-hello();
-hello();
-hello();
-hello();
-
-
-function helloName($name='Unknown') {
-    var_dump("hello $name");
-}
-
-helloName('Kaspar');
-helloName('Martin');
-helloName();
-
-function sum($a, $b) {
-    return $a+$b;
-}
-
-var_dump(sum(1,4));
-$answer = sum(6,5);
-
-function biggerThanTen($n) {
-    if($n > 10){
-        return 'Bigger';
+    public function volume(){
+        return $this ->width * $this-> height * $this -> lenght;
     }
-    return 'Smaller';
-    var_dump('asdasdasdasd'); // never runs
+
 }
 
-var_dump(biggerThanTen(11));
-var_dump(biggerThanTen(4));
+class MetalBox extends Box {
+    public $material = 'Metal';
+    public $weightPerUnit = 2;
 
-function anything(...$args) {
-    var_dump($args);
-}
-anything(1, 2, 3, 4, 5, 6, 7);
-
-function recursive($n){
-    if($n<10){
-        var_dump($n);
-        recursive($n+1);
+    public function mass() {
+        return $this -> volume() * $this ->weightOerUnit;
     }
 }
 
-recursive(0);
+$metalBox1 = new MetalBox();
+$metalBox1->width = 10;
+$metalBox1->height = 20;
+$metalBox1->lenght = 30;
+
+var_dump($metalBox1->volume());
+var_dump($metalBox1->mass());
+var_dump($metalBox1);
