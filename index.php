@@ -5,6 +5,8 @@ class Box {
     public $height;
     public $lenght;
 
+    use Colorful, Smelly;
+
     public function setWidth($width) {
         if(is_numeric($width) && $width > 0){
             $this->width = $width;
@@ -33,6 +35,24 @@ class MetalBox extends Box {
 
     public function mass() {
         return $this->volume() * $this->weightPerUnit;
+    }
+}
+
+class Cat {
+    use Colorful;
+}
+
+trait Colorful {
+    public $color;
+    public function setColor($color) {
+        $this->color = $color;
+    }
+}
+
+trait Smelly {
+    public $smell;
+    public function setSmell($smell) {
+        $this->smell = $smell;
     }
 }
 
