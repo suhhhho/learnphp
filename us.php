@@ -1,8 +1,6 @@
 <?php include __DIR__ . '/partials/header.php'; ?>
 
   <main class="container">
-    <?php include __DIR__ . '/partials/hero.php'; ?>
-    <?php include __DIR__ . '/partials/featured.php'; ?>
    
     <div class="row g-5">
       <div class="col-md-8">
