@@ -6,9 +6,9 @@ class Router {
 
     private $path;
 
-    public function __construct($path)
+    public function __construct($url)
     {
-        $this->path = $path;
+        $this->path = parse_url($url, PHP_URL_PATH);
     }
 
     public function match(){

@@ -25,4 +25,20 @@ class PublicController
         ];
         view('us', compact('posts'));
     }
+
+    public function form() {
+        // $name = '';
+        // if(isset($_GET['name'])) {
+        //     $name = $_GET['name'];
+        // }
+
+        //$name = isset($_GET['name']) ? $_GET['name'] : '';
+        $name = $_GET['name'] ?? '';
+        $age = $_GET['age'] ?? '';
+        view('form', compact('name', 'age'));
+    }
+
+    public function answer() {
+        dump($_GET, $_POST, $_REQUEST);
+    }
 }
