@@ -74,7 +74,7 @@
       <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
       <a class="nav-item nav-link link-body-emphasis" href="/form">Form</a>
       <a class="nav-item nav-link link-body-emphasis" href="/posts">Posts</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+      <a class="nav-item nav-link link-body-emphasis" href="/users">Users</a>
       <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
       <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
       <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
