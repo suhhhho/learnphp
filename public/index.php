@@ -11,6 +11,8 @@ spl_autoload_register(function ($class) {
     require_once __DIR__ . "/../src/$class.php";
 });
 
+session_start(['cookie_httponly' => true]);
+
 // require_once __DIR__ . '/../src/Router.php';
 // require_once __DIR__ . '/../src/DB.php';
 

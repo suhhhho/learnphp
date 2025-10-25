@@ -18,6 +18,11 @@ abstract class Model {
         return $db->find(static::$table, static::class, $id);
     }
 
+    public static function where($field, $value){
+        $db = new DB();
+        return $db->where(static::$table, static::class, $field, $value);
+    }
+
     public function save() {
         $fields = get_object_vars($this);
         unset($fields['id']);
