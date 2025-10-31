@@ -7,9 +7,18 @@ use App\Models\User;
 
 class PostController
 {
+    public function __construct()
+    {
+        if(!auth()){
+            redirect('/login');
+            die;
+        }
+    }
+
     public function index()
     {
         $posts = Post::all();
+        dump($posts);
         view('posts/index', compact('posts'));
     }
 
