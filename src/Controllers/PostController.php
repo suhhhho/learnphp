@@ -18,7 +18,6 @@ class PostController
     public function index()
     {
         $posts = Post::all();
-        dump($posts);
         view('posts/index', compact('posts'));
     }
 
@@ -27,6 +26,16 @@ class PostController
     }
 
     public function store() {
+        for($i = 0; $i<count($_FILES['image']['name']); $i++){
+            do {
+                $from = $_FILES['image']['tmp_name'][$i];
+                $uploadsDir = __DIR__ . '/../../public/uploads/';
+                $ext = pathinfo($_FILES['image']['name'][$i], PATHINFO_EXTENSION);
+                $name = md5($_FILES['image']['name'][$i] . microtime() . rand(PHP_INT_MIN, PHP_INT_MAX)) . '.' . $ext;
+                $to = $uploadsDir . $name;
+            } while(file_exists($to));
+            move_uploaded_file($from, $to);
+        }
         $post = new Post();
         $post->title = $_POST['title'];
         $post->body = $_POST['body'];
